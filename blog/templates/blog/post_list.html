@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>文章列表</h1>
+{% for post in posts %}
+    <article>
+        <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+        <p>作者：{{ post.author }} | 发布时间：{{ post.created_at }}</p>
+    </article>
+{% endfor %}
+{% endblock %}
